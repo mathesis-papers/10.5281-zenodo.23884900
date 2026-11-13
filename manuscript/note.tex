@@ -1,0 +1,267 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Pf}{\mathcal P_{\mathrm{fin}}}
+\newcommand{\HH}{\mathcal H}
+\title{Counterexamples to Wang's Conjectures 3.26 and 5.3\protect\\ on semigroup algebras}
+\author{Haobo Ma\thanks{ChronoAI Pte Ltd, Singapore.}
+\and Wenlin Zhang\thanks{National University of Singapore; ChronoAI Pte Ltd, Singapore.}}
+\date{1 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We refute Conjectures 3.26 and 5.3 of Wang's
+\emph{Semigroup rings and algebraically independent sequences with respect
+to idempotents in commutative semigroups}
+\cite[arXiv v1, pp.~23 and 27]{Wang2025}.
+The commutative periodic monoid
+$\Pf(\mathbb N)\times\{0,1,2\}$, with union in the first coordinate and
+addition capped at two in the second, has algebraic Davenport constant one
+over every nonzero commutative unitary ring. Its nongroup relative Davenport
+constants are unbounded. The finite submonoids with supports contained in
+$\{1,\ldots,m\}$, $m\geq1$, have the same algebraic constant,
+whereas the expression conjectured to equal it grows without bound as $m$ increases.
+\end{abstract}
+
+\section{The question and the construction}
+
+Wang's Conjecture 3.26 \cite[p.~23]{Wang2025} asserts that finiteness of
+$d(S,R)$ forces bounded relative Davenport constants in the Green quotient
+at elements whose positive cyclic semigroups are not groups. We construct
+a counterexample with $d(S,R)=1$. The same construction gives finite
+counterexamples to the equality in Conjecture 5.3 \cite[p.~27]{Wang2025}.
+The mechanism is that differences between transient elements and their
+cyclic idempotents multiply to zero, while unions retain arbitrarily many
+indispensable support elements.
+
+The declaration \texttt{result} in the cited \emph{trureturing} source
+\cite{Trureturing} negates Conjecture~3.26 over $\mathbb Q$, using
+$d\leq1$ and unbounded nongroup relative constants. The proofs below
+establish the arbitrary-ring equality, all relative constants, and the
+finite counterexamples to Conjecture~5.3.
+
+We use Wang's definitions of $d(S,R)$ \cite[Definition~2.1, p.~8]{Wang2025}
+and $D_a(S)$ \cite[Definition~D, p.~9]{Wang2025}; the latter invariant is
+studied in \cite{Wang2017}. Even for finite groups, $d(G,K)$ can exceed
+$D(G)-1$ \cite[Theorem~1.1]{Smertnig2010}.
+Here the discrepancy occurs with trivial Sch\"utzenberger groups.
+General treatments of the underlying semigroups and semigroup rings are
+\cite{Grillet2001,Gilmer1984}.
+
+Let $S$ be a commutative periodic semigroup, written additively, and let
+$R$ be a nonzero commutative ring with identity. The cyclic semigroup
+$\langle s\rangle=\{ns:n\geq1\}$ has a unique idempotent $e(s)$.
+The \emph{ordinary} semigroup algebra $R[S]$ is free over $R$ on all basis
+elements $X^s$, with $X^sX^t=X^{s+t}$. In particular, an absorbing
+semigroup element, if present, remains a basis label.
+For a finite sequence $T=(s_1,\ldots,s_\ell)$, set
+\[
+ F_T(c_1,\ldots,c_\ell)
+ =\prod_{i=1}^{\ell}(X^{s_i}-c_iX^{e(s_i)}).
+\]
+Then $d(S,R)$ is the supremum of the lengths of sequences for which
+$F_T(c_1,\ldots,c_\ell)\ne0$ for \emph{every} choice of nonzero
+$c_1,\ldots,c_\ell\in R$.
+
+The relative constant $D_a(S)$ is the supremum of lengths of sequences
+with sum $a$ having no proper subsequence with the same sum. In a monoid
+the empty sequence has sum $0_S$ and is allowed as a subsequence.
+Write $(a)=\{a\}\cup(a+S)$ for the principal ideal and
+$a\HH b$ when $(a)=(b)$. Write $\bar a$ for the image of $a$ in
+$S/\HH$.
+
+For a set $U$, put
+\begin{equation}\label{eq:model}
+ S_U=\Pf(U)\times\{0,1,2\},\qquad
+ (A,i)+(B,j)=(A\cup B,\min\{2,i+j\}).
+\end{equation}
+Its identity is $(\varnothing,0)$.
+
+\begin{theorem}\label{thm:main}
+For every set $U$ and every nonzero commutative unitary ring $R$,
+$S_U$ is a commutative periodic monoid and
+\begin{equation}\label{eq:exact}
+ d(S_U,R)=1,\qquad \HH=\Delta_{S_U},\qquad
+ D_{(A,k)}(S_U)=|A|+k\quad(0\leq k\leq2).
+\end{equation}
+The positive cyclic semigroup of $(A,k)$ is not a group exactly when
+$k=1$. Every Sch\"utzenberger group of $S_U$ is trivial.
+Consequently $S_{\mathbb N}$ refutes Conjecture~3.26.
+\end{theorem}
+
+\section{Proof of the exact formulas}
+
+Associativity of \eqref{eq:model} follows from associativity of union and
+\[
+ \min\{2,\min\{2,i+j\}+k\}=\min\{2,i+j+k\}.
+\]
+Commutativity and the identity follow directly. For $x=(A,k)$ and $n\geq1$,
+\[
+ nx=(A,\min\{2,nk\}).
+\]
+Thus levels zero and two are idempotent. At level one the positive cyclic
+semigroup consists of $x=(A,1)$ and $e(x)=(A,2)$, with
+$x+x=x+e(x)=e(x)+e(x)=e(x)$. It has no identity: neither of its two
+elements fixes $x$. Singleton cyclic semigroups at the other levels are
+groups with their own identities. This proves periodicity and the
+nongroup classification.
+
+\begin{lemma}\label{lem:algebra}
+For every $A,B\in\Pf(U)$,
+\[
+ (X^{(A,1)}-X^{(A,2)})(X^{(B,1)}-X^{(B,2)})=0.
+\]
+Moreover $d(S_U,R)=1$.
+\end{lemma}
+\begin{proof}
+All four monomials in the displayed product have label $(A\cup B,2)$,
+and their coefficients sum to $1-1-1+1=0$.
+Consider any sequence of length at least two and choose every coefficient
+$c_i=1_R$. If it contains an idempotent, its corresponding factor is zero.
+Otherwise all its elements have level one and the first two factors
+multiply to zero. Hence no such sequence satisfies the universal
+nonvanishing requirement, proving $d(S_U,R)\leq1$.
+For $x=(\varnothing,1)$ and any nonzero $c\in R$,
+$X^x-cX^{e(x)}\ne0$: the two labels differ and the coefficient at $x$
+is $1_R\ne0$. This proves the reverse inequality.
+\end{proof}
+
+\begin{lemma}\label{lem:green}
+For $a=(A,k)\in S_U$,
+\[
+ (a)=\{(B,j): A\subseteq B\in\Pf(U),\ k\leq j\leq2\}.
+\]
+Consequently $\HH$ is equality and every Sch\"utzenberger group is trivial.
+\end{lemma}
+\begin{proof}
+Addition can only enlarge the support and increase the level. Conversely,
+if $A\subseteq B$ and $k\leq j\leq2$, then
+$(A,k)+(B,j-k)=(B,j)$. Equality of two principal ideals therefore forces
+both inclusions of their supports and both inequalities of their levels,
+so their generators coincide. Each Green class is a singleton; its
+stabilizer is nonempty because it contains $0_{S_U}$, and all its induced
+permutations are the identity. Its Sch\"utzenberger group is thus the
+trivial group.
+\end{proof}
+
+\begin{lemma}\label{lem:relative}
+For every $A\in\Pf(U)$ and $k\in\{0,1,2\}$,
+$D_{(A,k)}(S_U)=|A|+k$.
+\end{lemma}
+\begin{proof}
+Take $k$ copies of $(\varnothing,1)$ together with one term
+$(\{a\},0)$ for each $a\in A$. The sum is $(A,k)$.
+Deleting any singleton-support term loses that support element; deleting
+any of the $k$ marked terms lowers the level. Every proper subsequence
+therefore changes the sum. This also covers $A=\varnothing,k=0$:
+the empty sequence is irreducible of length zero.
+
+For the upper bound let $T$ be irreducible with sum $(A,k)$.
+If $k=0$, mark no terms. If $k=1$, there is exactly one term of level one
+and no term of level two; mark that term. If $k=2$, mark one level-two
+term when one occurs, and otherwise mark two level-one terms.
+In each case the marked terms alone supply level $k$, and their number
+is at most $k$. For every unmarked term $(B,j)$, deleting it preserves
+the level. Irreducibility forces $B$ to contain a point absent from
+the supports of all other terms. Such exclusive points for different
+unmarked terms are distinct elements of $A$. There are therefore at
+most $|A|$ unmarked terms, giving $|T|\leq |A|+k$.
+\end{proof}
+
+The lemmas prove \eqref{eq:exact}. In $S_{\mathbb N}$ the targets
+$a_m=(\{1,\ldots,m\},1)$ have nongroup positive cyclic semigroups and
+\[
+ D_{\bar a_m}(S_{\mathbb N}/\HH)=m+1.
+\]
+This is an unbounded sequence of finite relative constants in one fixed
+infinite periodic monoid. Together with $d(S_{\mathbb N},R)=1$, it
+contradicts Conjecture~3.26.
+
+\section{The finite conjecture and the companion remark}
+
+For $a\in S$ let $\epsilon_a=1$ if $\langle a\rangle$ is not a group,
+and let $\epsilon_a=0$ otherwise. Wang's Conjecture~5.3 concerns finite
+commutative $S$ and a field $K$ that is either a splitting field for $S$
+or has characteristic $p$ with $\exp(S)$ a $p$-power. It proposes
+\begin{equation}\label{eq:conjectured}
+ d(S,K)=\max_{a\in S}
+ \{\epsilon_aD_{\bar a}(S/\HH)+d(\Gamma(H_a),K)\},
+\end{equation}
+where $\Gamma(H_a)$ is the Sch\"utzenberger group.
+
+\begin{corollary}\label{cor:finite}
+Let $m\geq1$ and $S_m=S_{\{1,\ldots,m\}}$. For every field $K$,
+\[
+ |S_m|=3\cdot2^m,\qquad \exp(S_m)=1,\qquad d(S_m,K)=1,
+\]
+whereas the right side of \eqref{eq:conjectured} is $m+1$.
+Thus Conjecture~5.3 is false, already for a six-element monoid.
+\end{corollary}
+\begin{proof}
+Every cyclic period is one, so $\exp(S_m)=1$. By Wang's definition
+\cite[p.~9]{Wang2025}, a splitting field for $S$ has exactly $\exp(S)$
+roots of $z^{\exp(S)}=1$. Every field satisfies this condition when
+$\exp(S)=1$; thus the first hypothesis of the conjecture applies.
+Theorem~\ref{thm:main} gives $d(S_m,K)=1$ and trivial
+$\Gamma(H_a)$. For the trivial group the algebraic constant is zero,
+since coefficient one makes any nonempty sequence's factor zero.
+Only level-one elements have $\epsilon_a=1$, and their relative
+constants are $|A|+1$. Their maximum is $m+1$, attained at
+$(\{1,\ldots,m\},1)$. For $m=1$ this gives $1\ne2$.
+\end{proof}
+
+The same formulas also give $D(S_m)=m+3$, with $D(S)$ defined as the
+least length from which every sequence is reducible: the largest
+irreducible length is $m+2$, attained at $(\{1,\ldots,m\},2)$.
+Thus the gap in \eqref{eq:conjectured} is unbounded even in this finite
+family with constant algebraic Davenport invariant.
+
+Remark~3.27 of \cite[p.~23]{Wang2025} conditionally proposes a finiteness
+characterization after Conjecture~3.26. Its printed wording says
+``group'', rather than ``semigroup''. For the semigroup interpretation,
+our infinite example disproves the necessity of the bounded-relative-constant
+condition, even though every Sch\"utzenberger group has algebraic
+constant zero. The literal group statement has no nongroup positive
+cyclic elements and is not contradicted by this example.
+
+\begin{thebibliography}{6}
+\bibitem{Wang2025}
+G.~Wang, \emph{Semigroup rings and algebraically independent sequences
+with respect to idempotents in commutative semigroups},
+\href{https://arxiv.org/abs/2509.18724v1}{arXiv:2509.18724v1}, 2025.
+
+\bibitem{Wang2017}
+G.~Wang, \emph{Additively irreducible sequences in commutative semigroups},
+J. Combin. Theory Ser. A \textbf{152} (2017), 380--397.
+\href{https://doi.org/10.1016/j.jcta.2017.07.001}{doi:10.1016/j.jcta.2017.07.001}.
+
+\bibitem{Smertnig2010}
+D.~Smertnig, \emph{On the Davenport constant and group algebras},
+Colloq. Math. \textbf{121} (2010), no.~2, 179--193.
+\href{https://doi.org/10.4064/cm121-2-2}{doi:10.4064/cm121-2-2}.
+
+\bibitem{Grillet2001}
+P.~A.~Grillet, \emph{Commutative Semigroups}, Advances in Mathematics,
+vol.~2, Kluwer Academic Publishers, Dordrecht, 2001.
+
+\bibitem{Gilmer1984}
+R.~Gilmer, \emph{Commutative Semigroup Rings}, Chicago Lectures in
+Mathematics, University of Chicago Press, Chicago, 1984.
+
+\bibitem{Trureturing}
+The trureturing contributors, \emph{Formal source for Wang's Conjecture 3.26},
+\href{https://github.com/the-omega-institute/trureturing/blob/d1876cfbbef8c13023311126691b180eefa69569/D5/S0/Certificates/Algebra/WangConjecture326Refutation.lean}{\texttt{WangConjecture326Refutation.lean}},
+\emph{trureturing}, source revision of 31 October 2026.
+\end{thebibliography}
+
+\smallskip
+\noindent\small This work is licensed under the Creative Commons
+Attribution 4.0 International License (CC BY 4.0).
+\end{document}

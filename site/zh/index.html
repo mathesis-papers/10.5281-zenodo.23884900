@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Counterexamples to Wang&#x27;s Conjectures 3.26 and 5.3 on semigroup algebras — Mathesis</title>
+<style>html{color-scheme:light dark}body{max-width:68rem;margin:3rem auto;padding:0 2rem;font:18px/1.7 Georgia,"Noto Serif",serif}header,article{max-width:48rem}h1{font-size:2rem;line-height:1.3;font-weight:500}h2{font-size:1.3rem;margin-top:2rem}a{color:#357053}nav{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;margin:1.4rem 0}.meta{font:15px/1.6 system-ui,sans-serif}p{overflow-wrap:anywhere}footer{margin-top:3rem;font-size:.9rem}@media(max-width:600px){body{margin:1.5rem auto;padding:0 1.2rem}h1{font-size:1.6rem}}</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],throwOnError:false})"></script>
+</head><body><header><a href="https://papers.trureturing.org/">Mathesis papers</a><h1>Counterexamples to Wang&#x27;s Conjectures 3.26 and 5.3 on semigroup algebras</h1><p>Haobo Ma, Wenlin Zhang</p></header><nav><a href="../">论文</a></nav><article><p>形式表达式的乘积如何抵消，能否控制一个和最多能有多少项、且每项都不可删除？Haobo Ma和Wenlin Zhang针对G. Wang在2025年提出的两个猜想给出否定回答：他们的代数量恒为一，而猜想所要约束的不可删除项数量却能无限增长。</p>
+<p>构造把集合U的每个有限子集配上零、一或二的层级。相加时子集取并集，层级相加但最高停在二；空集配零层是单位元。反复相加会稳定，所以这是交换周期幺半群。元素加上自身仍不变，称为幂等元。零层和二层都幂等，一层元素加倍则变成对应的二层元素。它生成的正循环半群有两个元素，却无单位元，因而不是群；另两层生成的单元素循环半群则是群。</p>
+<p>若任何真子序列都不能保持原和，就称序列不可约；空子序列的和为单位元。相对Davenport常数D₍A,k₎是和为子集A、层级k的不可约序列的最大长度。作者证明D₍A,k₎ = |A| + k。为A的每一点取一个零层单点项，再加k个空集一层项，就达到此长度。例如，单点集配一层由其零层单点项和空集一层项组成，两项缺一不可。反向证明先保留至多k项以达到所需层级；其余每项都须提供一个其他项没有的点，否则可删去，故至多有|A|项。</p>
+<p>代数量衡量的是另一件事。在非零含幺交换环上，普通半群代数为每个元素设置独立的基符号，符号相乘遵循幺半群加法。即使存在吸收元，它仍是基标签，并非代数中的零。对序列每项，从其符号减去非零标量乘以最终幂等元的符号。代数Davenport常数d，是无论如何选择非零标量、这些差的乘积都不为零的序列长度上确界。</p>
+<p>作者对所有这种环得到d = 1，包括有零因子的环。对至少两项的序列，把标量全选为一：若有幂等项，因子直接为零；否则前两项都在一层。对应因子相乘展开后，四项的子集标签是同一个并集，层级都为二，正负号抵消。另一方面，空集一层与其二层幂等元是不同基标签，所以单项因子对任何非零标量都不为零。</p>
+<p>Wang的第一个猜想把生成相同主理想的元素视为相同；主理想指继续相加能到达的元素集合。猜想要求：d有限时，这个Green商上相关相对常数有统一界，只考察正循环半群不是群的目标。此例中不同元素的主理想不同，取商不改变对象。相应的Schützenberger群描述等价类内部的置换；每类只有一点，故群都平凡。取U为自然数集，就在同一个无限幺半群中得到d为一，而m点子集配一层的相对常数为m + 1，推翻所猜的界。</p>
+<p>取U有m个点，得到大小为3·2ᵐ的有限幺半群。第二个猜想把非群情形的相对常数与上述群的代数常数组合成等式。此处群的贡献全为零，预言值为m + 1，实际却为一。所有循环周期为一，故每个域都满足Wang的分裂域假设。m = 1时仅六个元素，已出现一与二的不等。Wang在2017年研究过相对常数；Smertnig此前展示过有限群中代数常数超过相应组合界的现象，此处则连相关群都平凡。</p>
+<p>这些是一般性书面证明，并非仅靠有限计算。据稿件介绍，trureturing贡献者的Lean声明仅在有理数上利用d ≤ 1反驳无限情形的有界性猜想，不能扩展为任意环上的等式或有限反例的形式化证明。此例也反驳附带评论的半群解读，却不反驳其字面上的群表述。意义在于：立即发生的代数抵消，可与任意多不可删除的子集点并存。文章否定所提的一般控制关系，但未给出它们何时成立的替代刻画。</p></article><footer><a href="https://mathesis-omega-research.apps.chrono-ai.fun/contribute">Contribute to the mathematics and its formalization</a></footer></body></html>
