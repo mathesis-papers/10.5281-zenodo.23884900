@@ -2,12 +2,12 @@
   "schema": "mathesis.materials.v1",
   "work": "wang-conjecture326",
   "version": 2,
-  "repository_url": "https://github.com/mathesis-papers/6aec384bb5ab4ce92a483609",
-  "site_url": "https://papers.trureturing.org/6aec384bb5ab4ce92a483609/",
+  "repository_url": "https://github.com/mathesis-papers/10.5281-zenodo.23884900",
+  "site_url": "https://papers.trureturing.org/10.5281-zenodo.23884900/",
   "doi": "10.5281/zenodo.23884901",
   "reading": {
-    "en": "https://papers.trureturing.org/6aec384bb5ab4ce92a483609/en/",
-    "zh": "https://papers.trureturing.org/6aec384bb5ab4ce92a483609/zh/"
+    "en": "https://papers.trureturing.org/10.5281-zenodo.23884900/en/",
+    "zh": "https://papers.trureturing.org/10.5281-zenodo.23884900/zh/"
   },
   "slides": [],
   "visualizations": []
