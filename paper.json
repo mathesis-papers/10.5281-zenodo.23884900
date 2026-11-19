@@ -2,16 +2,16 @@
   "files": {
     "pdf": {
       "bytes": 74237,
-      "matches_public": null,
+      "matches_public": true,
       "path": "paper.pdf",
-      "public_sha256": null,
+      "public_sha256": "408baf09236d7181e06fe9963d1e8aa693313b47d15ef8e370a8d38f7b0128e1",
       "sha256": "408baf09236d7181e06fe9963d1e8aa693313b47d15ef8e370a8d38f7b0128e1"
     },
     "source": {
       "bytes": 9953,
-      "matches_public": null,
+      "matches_public": true,
       "path": "source.archive",
-      "public_sha256": null,
+      "public_sha256": "28de06013c852de15802885af7e42d7a3e729b8f7617449758071b262b5a2fb6",
       "sha256": "28de06013c852de15802885af7e42d7a3e729b8f7617449758071b262b5a2fb6"
     }
   },
@@ -38,6 +38,8 @@
     "license": "CC-BY-4.0",
     "msc": [],
     "pdf": {
+      "bytes": 74237,
+      "sha256": "408baf09236d7181e06fe9963d1e8aa693313b47d15ef8e370a8d38f7b0128e1",
       "url": "/api/v1/collected-papers/wang-conjecture326/files/pdf?version=2"
     },
     "previous_version": null,
@@ -46,6 +48,8 @@
     "record": "wang-conjecture326",
     "repository_name": "10.5281-zenodo.23884900",
     "source": {
+      "bytes": 9953,
+      "sha256": "28de06013c852de15802885af7e42d7a3e729b8f7617449758071b262b5a2fb6",
       "url": "/api/v1/collected-papers/wang-conjecture326/files/source?version=2"
     },
     "title": "Counterexamples to Wang's Conjectures 3.26 and 5.3 on semigroup algebras",
